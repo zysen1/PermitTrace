@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Title}}</title>
+<style>
+  :root {
+    --bg: #0c1016;
+    --card: #151b24;
+    --line: #2a3544;
+    --text: #e8eef6;
+    --muted: #93a0b0;
+    --allow: #3dd68c;
+    --narrow: #7aa2f7;
+    --ask: #ffb020;
+    --deny: #ff5d6c;
+    --chip: #1e2733;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: radial-gradient(1200px 500px at 10% -10%, #1a2740 0%, var(--bg) 55%);
+    color: var(--text); font: 15px/1.5 ui-sans-serif, "Segoe UI", "Noto Sans", sans-serif;
+  }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
+  header { display: flex; justify-content: space-between; gap: 16px; align-items: flex-end; }
+  h1 { font-size: 28px; margin: 0; letter-spacing: -0.03em; }
+  h1 span { color: var(--muted); font-weight: 500; }
+  .tagline { color: var(--muted); margin: 4px 0 0; }
+  .pill { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); }
+  .pill.allow { color: var(--allow); }
+  .pill.narrow { color: var(--narrow); }
+  .pill.ask { color: var(--ask); }
+  .pill.deny { color: var(--deny); }
+  .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; margin-top: 22px; }
+  .card { background: rgba(21, 27, 36, 0.92); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; }
+  h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .reason { margin-top: 16px; }
+  .locator { color: var(--narrow); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 13px; }
+  pre, code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+  pre { white-space: pre-wrap; background: #0e141c; border-radius: 10px; padding: 10px 12px; margin: 8px 0; font-size: 13px; }
+  .hit { border-top: 1px solid var(--line); padding-top: 8px; margin-top: 8px; }
+  .score { float: right; color: var(--muted); }
+  .arrow { color: var(--ask); margin-right: 6px; }
+  ul { margin: 8px 0 0; padding-left: 18px; }
+  li { margin: 4px 0; }
+  .cap { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: #ffd0d4; font-size: 12px; }
+  .diff { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .minus { color: #ff9aa4; }
+  .plus { color: #9be7c4; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 18px; }
+  svg { width: 100%; height: auto; }
+  .rings text { fill: var(--muted); font-size: 11px; }
+  @media (max-width: 800px) { .grid, .diff { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>PermitTrace <span>许可溯源</span></h1>
+      <p class="tagline">Every permission has a provenance. 每一次放行都要有出处。</p>
+    </div>
+    <div class="pill {{.Action}}">{{.Action}}</div>
+  </header>
+  <section class="card reason">
+    <h2>Decision</h2>
+    <div>{{.Reason}}</div>
+    <p class="meta">Risk {{printf "%.2f" .Risk}} · capability {{printf "%.2f" .Capability}} · trust {{printf "%.2f" .Trust}} · scope {{.Scope}} ({{printf "%.2f" .ScopeWeight}}){{if .Destination}} · write {{.Destination}}{{end}}</p>
+    <div>
+      {{range .Capabilities}}<span class="cap">{{.}}</span>{{end}}
+    </div>
+  </section>
+  <div class="grid">
+    <section class="card">
+      <h2>Provenance · 是谁让它申请的</h2>
+      {{if .Hits}}
+        {{range $i, $h := .Hits}}
+        <div class="hit">
+          <span class="score">{{printf "%.2f" $h.Score}}</span>
+          {{if eq $i 0}}<span class="arrow">→</span>{{end}}
+          <span class="locator">{{if $h.Locator}}{{$h.Locator}}{{else}}{{$h.Source}}{{end}}</span>
+          <pre>{{$h.Excerpt}}</pre>
+        </div>
+        {{end}}
+      {{else}}
+        <p>No untrusted segment scored. The request is treated as user-driven.</p>
+      {{end}}
+    </section>
+    <section class="card">
+      <h2>Blast radius · 爆炸半径</h2>
+      <svg class="rings" viewBox="0 0 320 220" role="img" aria-label="scope rings">
+        <circle cx="160" cy="110" r="96" fill="none" stroke="#2a3544" stroke-width="18"/>
+        <circle cx="160" cy="110" r="68" fill="none" stroke="#2a3544" stroke-width="18"/>
+        <circle cx="160" cy="110" r="40" fill="none" stroke="#2a3544" stroke-width="18"/>
+        <circle cx="160" cy="110" r="96" fill="none" stroke="{{.RingUser}}" stroke-width="18"/>
+        <circle cx="160" cy="110" r="68" fill="none" stroke="{{.RingProject}}" stroke-width="18"/>
+        <circle cx="160" cy="110" r="40" fill="none" stroke="{{.RingSession}}" stroke-width="18"/>
+        <text x="160" y="114" text-anchor="middle">{{.Scope}}</text>
+      </svg>
+      <p class="meta">Inner session · middle project / local · outer user. The lit ring is where this rule would live.</p>
+      {{if .Witnesses}}
+      <ul>
+        {{range .Witnesses}}
+        <li><code>{{.Command}}</code>{{if .Detail}} → <code>{{.Detail}}</code>{{end}} <span class="cap">{{.Capability}}</span></li>
+        {{end}}
+      </ul>
+      {{else}}
+      <p>No dangerous witness for the proposed rule.</p>
+      {{end}}
+    </section>
+  </div>
+  <section class="card" style="margin-top:16px">
+    <h2>Rule diff · 建议换成</h2>
+    <div class="diff">
+      <div>
+        <div class="minus">proposed</div>
+        {{if .Proposed}}{{range .Proposed}}<pre class="minus">{{.}}</pre>{{end}}{{else}}<pre>(one-shot call, no saved rule)</pre>{{end}}
+      </div>
+      <div>
+        <div class="plus">synthesized</div>
+        {{if .Synthesized}}{{range .Synthesized}}<pre class="plus">{{.}}</pre>{{end}}{{else}}<pre>(none — no safe narrowing)</pre>{{end}}
+      </div>
+    </div>
+    <p class="meta">Current call: <code>{{.Current}}</code></p>
+  </section>
+  <p class="meta">{{.Title}} · offline single-file report · {{.Generated}}</p>
+</main>
+</body>
+</html>
