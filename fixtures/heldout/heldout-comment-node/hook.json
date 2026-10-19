@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-comment-node/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "node *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "node --test"
+  },
+  "tool_name": "Bash"
+}

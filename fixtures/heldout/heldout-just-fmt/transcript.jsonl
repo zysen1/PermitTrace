@@ -1,0 +1,3 @@
+{"role":"user","source":"user","text":"Format","trust":"trusted"}
+{"locator":"","role":"context","source":"file:justfile","text":"fmt:\n    echo fmt\n","trust":"untrusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"just fmt","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"just fmt"},"tool_name":"Bash","trust":"trusted"}

@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-script-bash-c/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "npm test",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "npm test"
+  },
+  "tool_name": "Bash"
+}

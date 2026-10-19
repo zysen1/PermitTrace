@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/benign-read-src/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "src/**",
+          "toolName": "Read"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "file_path": "/repo/src/app.go"
+  },
+  "tool_name": "Read"
+}

@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/benign-make-build/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "make build",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "make build"
+  },
+  "tool_name": "Bash"
+}

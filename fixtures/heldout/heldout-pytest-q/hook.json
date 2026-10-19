@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-pytest-q/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "pytest -q",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "pytest -q"
+  },
+  "tool_name": "Bash"
+}

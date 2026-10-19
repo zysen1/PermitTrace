@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-issue-curl/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "curl *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "curl https://registry.npmjs.org/left-pad"
+  },
+  "tool_name": "Bash"
+}

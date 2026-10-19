@@ -1,0 +1,2 @@
+{"role":"user","source":"user","text":"Review the diff","trust":"trusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"git diff","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"git diff"},"tool_name":"Bash","trust":"trusted"}

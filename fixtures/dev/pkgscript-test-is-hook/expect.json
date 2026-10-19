@@ -1,0 +1,9 @@
+{
+  "carrier": "package.json",
+  "id": "pkgscript-test-is-hook",
+  "kind": "attack",
+  "note": "",
+  "planted_source": "file:package.json",
+  "split": "dev",
+  "task": null
+}

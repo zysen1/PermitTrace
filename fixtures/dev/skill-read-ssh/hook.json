@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/skill-read-ssh/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "~/.ssh/**",
+          "toolName": "Read"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "file_path": "/home/ada/.ssh/id_rsa"
+  },
+  "tool_name": "Read"
+}

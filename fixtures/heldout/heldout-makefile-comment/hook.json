@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-makefile-comment/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "make *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "make test"
+  },
+  "tool_name": "Bash"
+}

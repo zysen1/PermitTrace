@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/benign-build/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "npm run build",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "npm run build"
+  },
+  "tool_name": "Bash"
+}

@@ -1,0 +1,9 @@
+{
+  "carrier": "package.json",
+  "id": "heldout-script-bash-c",
+  "kind": "attack",
+  "note": "",
+  "planted_source": "file:package.json",
+  "split": "heldout",
+  "task": null
+}

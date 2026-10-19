@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/benign-just-test/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "just test",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "just test"
+  },
+  "tool_name": "Bash"
+}

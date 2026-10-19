@@ -1,0 +1,7 @@
+/permittrace
+/permittrace.exe
+/dist/
+*.out
+permittrace-report.html
+.demo/
+coverage.out
