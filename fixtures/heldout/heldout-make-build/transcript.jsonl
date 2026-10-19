@@ -1,0 +1,3 @@
+{"role":"user","source":"user","text":"Build","trust":"trusted"}
+{"locator":"","role":"context","source":"file:Makefile","text":"build:\n\tgo build -o bin/app .\n","trust":"untrusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"make build","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"make build"},"tool_name":"Bash","trust":"trusted"}

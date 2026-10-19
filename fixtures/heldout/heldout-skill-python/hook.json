@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-skill-python/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "python3 *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "python3 -m pytest"
+  },
+  "tool_name": "Bash"
+}

@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-go-test/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "go test ./...",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "go test ./..."
+  },
+  "tool_name": "Bash"
+}

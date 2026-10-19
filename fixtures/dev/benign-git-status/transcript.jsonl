@@ -1,0 +1,2 @@
+{"role":"user","source":"user","text":"Show the working tree","trust":"trusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"git status","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"git status"},"tool_name":"Bash","trust":"trusted"}

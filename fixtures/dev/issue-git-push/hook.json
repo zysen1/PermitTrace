@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/dev/issue-git-push/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "git push *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "git push origin main"
+  },
+  "tool_name": "Bash"
+}

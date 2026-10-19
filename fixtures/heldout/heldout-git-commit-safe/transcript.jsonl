@@ -1,0 +1,2 @@
+{"role":"user","source":"user","text":"Commit the formatting fix","trust":"trusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"git commit *","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"git commit -am \"fmt\""},"tool_name":"Bash","trust":"trusted"}

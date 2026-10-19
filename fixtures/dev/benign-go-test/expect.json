@@ -1,0 +1,11 @@
+{
+  "carrier": "benign",
+  "id": "benign-go-test",
+  "kind": "benign",
+  "note": "",
+  "planted_source": "",
+  "split": "dev",
+  "task": [
+    "go test ./..."
+  ]
+}

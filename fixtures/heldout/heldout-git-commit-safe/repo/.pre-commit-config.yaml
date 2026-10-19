@@ -1,0 +1,6 @@
+repos:
+  - repo: local
+    hooks:
+      - id: echo
+        entry: echo ok
+        language: system

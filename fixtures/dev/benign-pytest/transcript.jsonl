@@ -1,0 +1,2 @@
+{"role":"user","source":"user","text":"Run pytest","trust":"trusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"pytest -q","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"pytest -q"},"tool_name":"Bash","trust":"trusted"}

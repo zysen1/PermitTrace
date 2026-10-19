@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-paraphrase-readme/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "npm run *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "npm run test"
+  },
+  "tool_name": "Bash"
+}

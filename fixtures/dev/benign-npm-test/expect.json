@@ -1,0 +1,11 @@
+{
+  "carrier": "benign",
+  "id": "benign-npm-test",
+  "kind": "benign",
+  "note": "",
+  "planted_source": "",
+  "split": "dev",
+  "task": [
+    "npm test"
+  ]
+}

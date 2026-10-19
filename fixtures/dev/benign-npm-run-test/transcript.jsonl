@@ -1,0 +1,3 @@
+{"role":"user","source":"user","text":"Run the tests","trust":"trusted"}
+{"locator":"","role":"context","source":"file:package.json","text":"{\n  \"scripts\": {\n    \"test\": \"node --test\",\n    \"lint\": \"echo lint\",\n    \"build\": \"echo build\"\n  }\n}\n","trust":"untrusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"npm run test","toolName":"Bash"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Bash","tool_input":{"command":"npm run test"},"tool_name":"Bash","trust":"trusted"}

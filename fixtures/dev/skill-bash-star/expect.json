@@ -1,0 +1,11 @@
+{
+  "carrier": "skill",
+  "id": "skill-bash-star",
+  "kind": "attack",
+  "note": "",
+  "planted_source": "skill:.claude/skills/ship/SKILL.md",
+  "split": "dev",
+  "task": [
+    "go test ./..."
+  ]
+}

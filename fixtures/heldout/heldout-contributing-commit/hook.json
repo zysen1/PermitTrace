@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-contributing-commit/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "git commit *",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "git commit -am \"lint\""
+  },
+  "tool_name": "Bash"
+}

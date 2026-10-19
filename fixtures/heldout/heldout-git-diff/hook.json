@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-git-diff/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "git diff",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "git diff"
+  },
+  "tool_name": "Bash"
+}

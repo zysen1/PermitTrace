@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-npm-lint/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "npm run lint",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "npm run lint"
+  },
+  "tool_name": "Bash"
+}

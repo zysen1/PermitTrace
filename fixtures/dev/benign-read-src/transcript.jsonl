@@ -1,0 +1,3 @@
+{"role":"user","source":"user","text":"Read the source and explain add","trust":"trusted"}
+{"locator":"","role":"context","source":"file:src/app.go","text":"package app\nfunc Add(a, b int) int { return a + b }\n","trust":"untrusted"}
+{"permission_suggestions":[{"behavior":"allow","destination":"localSettings","rules":[{"ruleContent":"src/**","toolName":"Read"}],"type":"addRules"}],"role":"assistant","source":"assistant","tool":"Read","tool_input":{"file_path":"/repo/src/app.go"},"tool_name":"Read","trust":"trusted"}
